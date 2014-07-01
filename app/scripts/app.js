@@ -22,13 +22,21 @@ var app = angular.module('ngBlogApp', [
 
 app.config(function ($routeProvider) {
     $routeProvider
-      .when('/about', {
-          templateUrl: 'views/about.html',
-          controller: 'AboutCtrl'
+      .when('/login', {
+          templateUrl: 'views/login.html',
+          controller: 'AuthCtrl'
       })
         .when('/posts', {
             templateUrl: 'views/posts.html',
             controller: 'postsCtrl'
+        })
+        .when('/posts/postId', {
+            templateUrl: 'views/showpost.html',
+            controller: 'PostViewCtrl'
+        })
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'AuthCtrl'
         })
       .otherwise({
           redirectTo: '/'
